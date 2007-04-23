@@ -1,8 +1,6 @@
 %define	name	edje
-%define	version 0.5.0.025
-%define release %mkrel 0.%{cvsrel}.2
-
-%define cvsrel 20060323
+%define	version 0.5.0.037
+%define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -15,10 +13,10 @@ Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.get-e.org/
-Source: 	%{name}-%{cvsrel}.tar.bz2
+Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Buildrequires: 	embryo-devel ecore-devel 
-BuildRequires:	multiarch-utils
+BuildRequires:	multiarch-utils autoconf2.5
 
 %description
 A graphical layout and animation library for animated resizable, compressed
@@ -44,11 +42,10 @@ Provides: %{name}-devel = %version-%release
 Edje development headers and libraries.
 
 %prep
-%setup -q -n %name
+%setup -q
 
 %build
-./autogen.sh
-%configure
+%configure2_5x
 %make
 
 %install
@@ -65,7 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc AUTHORS COPYING README 
-%_bindir/%name
 %_bindir/%{name}_*
 %_datadir/%name
 
@@ -81,3 +77,4 @@ rm -rf $RPM_BUILD_ROOT
 %_includedir/*.h
 %_bindir/%name-config
 %multiarch %multiarch_bindir/%name-config
+
