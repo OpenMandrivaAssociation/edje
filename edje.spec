@@ -1,6 +1,6 @@
 %define	name	edje
-%define	version 0.5.0.037
-%define release %mkrel 2
+%define	version 0.5.0.038
+%define release %mkrel 1
 
 %define major 	0
 %define libname %mklibname %{name} %major
@@ -78,3 +78,70 @@ rm -rf $RPM_BUILD_ROOT
 %_bindir/%name-config
 %multiarch %multiarch_bindir/%name-config
 
+
+
+%changelog
+* Wed May 16 2007 Antoine Ginies <aginies@mandriva.com> 0.5.0.038-1mdv2008.0
+- CVS snapshot 20070516
+
+* Tue Apr 24 2007 Pascal Terjan <pterjan@mandriva.org> 0.5.0.037-2mdv2008.0
++ Revision: 17719
+- Rebuild with the new ecore
+
+* Mon Apr 23 2007 Pascal Terjan <pterjan@mandriva.org> 0.5.0.037-1mdv2008.0
++ Revision: 17694
+- New snapshot
+- Use autoconf2.5
+- Import edje
+
+
+
+* Mon Aug 07 2006 Lenny Cartier <lenny@mandriva.com> 0.5.0.025-0.20060323.2mdv2007.0
+- rebuild
+
+* Fri Mar 24 2006 Austin Acton <austin@mandriva.org> 0.5.0.025-0.20060323.1mdk
+- new cvs checkout
+
+* Fri Feb 17 2006 Austin Acton <austin@mandriva.org> 0.5.0.023-0.20060216.1mdk
+- new cvs checkout
+
+* Wed Jan 18 2006 Austin Acton <austin@mandriva.org> 0.5.0.023-0.20060117.1mdk
+- new cvs checkout
+
+* Fri Nov 25 2005 Austin Acton <austin@mandriva.org> 0.5.0.019-0.20051124.1mdk
+- new cvs checkout
+
+* Wed Nov 09 2005 Austin Acton <austin@mandriva.org> 0.5.0.018-0.20051109.1mdk
+- new cvs checkout
+
+* Sat Nov 05 2005 Austin Acton <austin@mandriva.org> 0.5.0.018-0.20051104.1mdk
+- new cvs checkout
+
+* Mon Sep 05 2005 Austin Acton <austin@mandriva.org> 0.5.0.013-0.20050904.1mdk
+- new cvs checkout
+
+* Sun Aug 14 2005 Austin Acton <austin@mandriva.org> 0.5.0.013-0.20050813.1mdk
+- new cvs checkout
+
+* Mon Jun 27 2005 Austin Acton <austin@mandriva.org> 0.5.0.010-0.20050627.1mdk
+- new cvs checkout
+
+* Wed Jun 08 2005 Austin Acton <austin@mandriva.org> 0.5.0.008-0.20050608.1mdk
+- new cvs checkout
+
+* Wed May 25 2005 Austin Acton <austin@mandriva.org> 0.5.0.007-0.20050524.3mdk
+- multiarch binaries
+
+* Wed May 25 2005 Austin Acton <austin@mandriva.org> 0.5.0.007-0.20050524.2mdk
+- more fixes
+
+* Wed May 25 2005 Austin Acton <austin@mandriva.org> 0.5.0.007-0.20050524.1mdk
+- new cvs checkout
+- tidy spec
+
+* Fri Sep 24 2004 Lenny Cartier <lenny@mandrakesoft.com> 0.5.0-0.20040913.2mdk
+- add some requires exceptions
+- fix libedje-devel requires 
+
+* Fri Sep 24 2004 Lenny Cartier <lenny@mandrakesoft.com> 0.5.0-0.20040913.1mdk
+- 0.5.0 20040913
