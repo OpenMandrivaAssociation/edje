@@ -15,7 +15,7 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Buildrequires: 	embryo-devel ecore-devel 
+Buildrequires: 	embryo-devel, ecore-devel >= 0.9.9
 BuildRequires:	multiarch-utils autoconf2.5
 
 %description
