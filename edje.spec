@@ -1,8 +1,8 @@
-%define	name	edje
+%define	name edje
 %define	version 0.5.0.038
-%define release %mkrel 3
+%define release %mkrel 4
 
-%define major 	0
+%define major 0
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
 
@@ -15,7 +15,7 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Buildrequires: 	embryo-devel, ecore-devel >= 0.9.9
+Buildrequires: 	embryo-devel >= 0.9.1.038, ecore-devel >= 0.9.9
 BuildRequires:	multiarch-utils autoconf2.5
 
 %description
@@ -27,6 +27,7 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %libname
 Summary: Libraries for the edje package
 Group: System/Libraries
+provides: %name = %version-%release
 
 %description -n %libname
 Libraries for edje.
