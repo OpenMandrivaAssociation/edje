@@ -1,6 +1,6 @@
 %define	name edje
 %define	version 0.5.0.038
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -27,7 +27,7 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %libname
 Summary: Libraries for the edje package
 Group: System/Libraries
-provides: %name = %version-%release
+provides: %libname = %version-%release
 
 %description -n %libname
 Libraries for edje.
@@ -36,7 +36,7 @@ Libraries for edje.
 Summary: Enlightenment edje headers and development libraries
 Group: Development/Other
 Requires: %libname = %version
-Provides: lib%{name}-devel = %version-%release
+Provides: %{libname}-devel = %version-%release
 Provides: %{name}-devel = %version-%release
 
 %description -n %libnamedev
