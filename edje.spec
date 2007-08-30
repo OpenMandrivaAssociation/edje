@@ -52,6 +52,7 @@ Edje development headers and libraries.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
+cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
 %multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
