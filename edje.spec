@@ -14,7 +14,6 @@ License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
-BuildRoot: 	%{_tmppath}/%{name}-buildroot
 Buildrequires: 	embryo-devel >= 0.9.1.041, ecore-devel >= 0.9.9.041
 BuildRequires:	multiarch-utils autoconf2.5
 
