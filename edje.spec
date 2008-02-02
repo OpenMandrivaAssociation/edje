@@ -1,10 +1,10 @@
 %define	name edje
-%define	version 0.5.0.041
+%define	version 0.5.0.042
 %define release %mkrel 1
 
 %define major 0
 %define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
+%define libnamedev %mklibname %{name} -d
 
 Summary: 	Edje is a complex graphical design & layout library
 Name: 		%{name}
@@ -12,11 +12,11 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://www.get-e.org/
+URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-Buildrequires: 	embryo-devel >= 0.9.1.041, ecore-devel >= 0.9.9.041
-BuildRequires:	multiarch-utils autoconf2.5
+BuildRequires: 	embryo-devel
+BuildRequires:	ecore-devel
 
 %description
 A graphical layout and animation library for animated resizable, compressed
@@ -27,7 +27,6 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %libname
 Summary: Libraries for the edje package
 Group: System/Libraries
-provides: %libname = %version-%release
 
 %description -n %libname
 Libraries for edje.
@@ -36,7 +35,7 @@ Libraries for edje.
 Summary: Enlightenment edje headers and development libraries
 Group: Development/Other
 Requires: %libname = %version
-Provides: %{libname}-devel = %version-%release
+Provides: lib%{name}-devel = %version-%release
 Provides: %{name}-devel = %version-%release
 
 %description -n %libnamedev
@@ -52,8 +51,6 @@ Edje development headers and libraries.
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
-cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
-%multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
@@ -77,7 +74,3 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/lib*.*a
 %_libdir/pkgconfig/*.pc
 %_includedir/*.h
-%_bindir/%name-config
-%multiarch %multiarch_bindir/%name-config
-
-
