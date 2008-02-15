@@ -1,6 +1,6 @@
 %define	name edje
 %define	version 0.5.0.042
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -15,8 +15,8 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires: 	embryo-devel
-BuildRequires:	ecore-devel
+BuildRequires: 	embryo-devel => 0.9.1.042
+BuildRequires:	ecore-devel => 0.9.9.042
 
 %description
 A graphical layout and animation library for animated resizable, compressed
