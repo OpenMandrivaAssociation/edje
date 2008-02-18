@@ -6,7 +6,7 @@
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} -d
 
-Summary: 	Edje is a complex graphical design & layout library
+Summary: 	Complex graphical design & layout library
 Name: 		%{name}
 Version: 	%{version}
 Release: 	%{release}
