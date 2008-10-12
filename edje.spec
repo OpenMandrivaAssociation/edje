@@ -66,6 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS COPYING README 
 %_bindir/%{name}_*
+%_bindir/inkscape2edc
 %_datadir/%name
 
 %files -n %libname
