@@ -1,6 +1,6 @@
 %define	name edje
-%define	version 0.9.9.043
-%define release %mkrel 2
+%define	version 0.9.9.050
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname %{name} %major
@@ -15,7 +15,7 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires: 	embryo-devel => 0.9.1.042
+BuildRequires: 	embryo-devel => 0.9.9.050
 BuildRequires:	ecore-devel => 0.9.9.042
 
 %description
