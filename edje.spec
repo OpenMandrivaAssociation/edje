@@ -1,6 +1,6 @@
 %define	name edje
-%define	version 0.9.92.060
-%define release %mkrel 2
+%define	version 0.9.92.061
+%define release %mkrel 1
 
 %define major 0
 %define libname %mklibname %{name} %major
