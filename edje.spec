@@ -17,6 +17,7 @@ Source: 	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.t
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires: 	embryo-devel => 0.9.9.053
 BuildRequires:	ecore-devel => 0.9.9.053
+BuildRequires:	lua-devel
 
 %description
 A graphical layout and animation library for animated resizable, compressed
