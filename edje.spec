@@ -1,5 +1,5 @@
 %define	name edje
-%define	version 0.9.93.063
+%define	version 0.9.99.49898
 %define release %mkrel 1
 
 %define major 0
@@ -69,6 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %_bindir/%{name}_*
 %_bindir/inkscape2edc
 %_datadir/%name
+%_datadir/mime/packages/edje.xml
 
 %files -n %libname
 %defattr(-,root,root)
