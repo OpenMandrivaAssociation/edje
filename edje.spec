@@ -1,8 +1,8 @@
 %define	name edje
-%define	version 0.9.99.49898
-%define release %mkrel 1
+%define	version 1.0.0
+%define release %mkrel -c beta 1
 
-%define major 0
+%define major 1
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} -d
 
@@ -13,10 +13,10 @@ Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
-Source: 	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
+Source: 	http://download.enlightenment.org/releases/%{name}-%{version}.beta.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires: 	embryo-devel => 0.9.9.053
-BuildRequires:	ecore-devel => 0.9.9.053
+BuildRequires: 	embryo-devel => 1.0.0
+BuildRequires:	ecore-devel => 1.0.0
 BuildRequires:	lua-devel
 
 %description
@@ -43,7 +43,7 @@ Provides: %{name}-devel = %version-%release
 Edje development headers and libraries.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{version}.beta
 
 %build
 %configure2_5x
@@ -80,4 +80,4 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/lib*.so
 %_libdir/lib*.*a
 %_libdir/pkgconfig/*.pc
-%_includedir/*.h
+%_includedir/*
