@@ -1,6 +1,6 @@
 %define	name edje
 %define	version 1.0.0
-%define release %mkrel -c beta2 1
+%define release %mkrel -c beta3 1
 
 %define major 1
 %define libname %mklibname %{name} %major
@@ -13,7 +13,7 @@ Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
-Source: 	http://download.enlightenment.org/releases/%{name}-%{version}.beta2.tar.bz2
+Source: 	http://download.enlightenment.org/releases/%{name}-%{version}.beta3.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires: 	embryo-devel => 1.0.0
 BuildRequires:	ecore-devel => 1.0.0
@@ -43,7 +43,7 @@ Provides: %{name}-devel = %version-%release
 Edje development headers and libraries.
 
 %prep
-%setup -qn %{name}-%{version}.beta2
+%setup -qn %{name}-%{version}.beta3
 
 %build
 %configure2_5x
