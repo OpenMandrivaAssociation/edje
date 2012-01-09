@@ -87,12 +87,14 @@ NOCONFIGURE=yes ./autogen.sh
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
 %files
 %doc AUTHORS COPYING README
 %{_bindir}/%{name}_*
 %{_bindir}/inkscape2edc
 %{_libdir}/edje/utils/epp
+%{_libdir}/edje/modules/multisense_factory/*
 %{_datadir}/%{name}
 %{_datadir}/mime/packages/%{name}.xml
 
