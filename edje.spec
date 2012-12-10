@@ -28,8 +28,8 @@ Name:		edje
 Version:	1.1.99.%{svnrev}
 Release:	0.%{svndate}.1
 %else
-Version:	1.2.1
-Release:	1
+Version:	1.7.3
+Release:	2
 %endif
 License:	BSD
 Group:		Graphical desktop/Enlightenment
@@ -42,8 +42,16 @@ Source0:	http://download.enlightenment.org/releases/%{name}-%{version}.tar.gz
 
 BuildRequires:	lua-devel
 BuildRequires:	pkgconfig(ecore)
+BuildRequires:	pkgconfig(ecore-evas)
+BuildRequires:	pkgconfig(ecore-file)
+BuildRequires:	pkgconfig(ecore-input)
+BuildRequires:	pkgconfig(eet)
+BuildRequires:	pkgconfig(eina)
+BuildRequires:	pkgconfig(eio)
 BuildRequires:	pkgconfig(embryo)
+BuildRequires:	pkgconfig(evas)
 Conflicts:	%{libname} < 1.1.99.66793-0.20120103.1
+Requires:	evas
 
 %description
 A graphical layout and animation library for animated resizable, compressed
@@ -54,7 +62,7 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %{libname}
 Summary:	Libraries for the edje package
 Group:		System/Libraries
-Obsoletes:	%{_lib}edje0
+Obsoletes:	%{_lib}edje0 < 1.7.0
 
 %description -n %{libname}
 Libraries for edje.
@@ -62,39 +70,36 @@ Libraries for edje.
 %package -n %{develname}
 Summary:	Enlightenment edje headers and development libraries
 Group:		Development/Other
-Requires:	%{libname} = %{version}
+Requires:	%{libname} = %{version}-%{release}
+Requires:	pkgconfig(lua)
 Provides:	%{name}-devel = %{version}-%{release}
 
 %description -n %{develname}
 Edje development headers and libraries.
 
 %prep
-%if %snapshot
+%if %{snapshot}
 %setup -qn %{name}
 %else
 %setup -q
 %endif
 
 %build
-%if %snapshot
+%if %{snapshot}
 NOCONFIGURE=yes ./autogen.sh
 %endif
-
 %configure2_5x \
 	--disable-static
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
-find %{buildroot} -type f -name "*.la" -exec rm -f {} ';'
 
 %files
 %doc AUTHORS COPYING README
 %{_bindir}/%{name}_*
 %{_bindir}/inkscape2edc
 %{_libdir}/edje/utils/epp
-%{_libdir}/edje/modules/multisense_factory/*
 %{_datadir}/%{name}
 %{_datadir}/mime/packages/%{name}.xml
 

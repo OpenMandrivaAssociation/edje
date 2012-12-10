@@ -1,2 +1,4 @@
 sources:
-  "edje-1.2.1.tar.gz:"	d35a7b7afa9b4ec21fd19e3aba49da114e09c44b
+  "edje-1.7.1.tar.gz": 65e983041fa4405f14c23239d35dcce65ac1bbe4
+  edje-1.7.2.tar.gz: f42b5276840dc2b5cc611150ad72f1a54dae123b
+  edje-1.7.3.tar.gz: 7882ee5cdf67a53a543b06d27a9f06f833b1b5da
