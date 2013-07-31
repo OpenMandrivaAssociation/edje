@@ -4,13 +4,12 @@
 
 Summary:	Complex graphical design & layout library
 Name:		edje
-Version:	1.7.7
+Version:	1.7.8
 Release:	1
 License:	BSD
 Group:		Graphical desktop/Enlightenment
-URL:		http://www.enlightenment.org/
+Url:		http://www.enlightenment.org/
 Source0:	http://download.enlightenment.fr/releases/%{name}-%{version}.tar.bz2
-
 BuildRequires:	lua-devel
 BuildRequires:	pkgconfig(ecore)
 BuildRequires:	pkgconfig(ecore-evas)
@@ -40,9 +39,9 @@ Libraries for edje.
 %package -n %{devname}
 Summary:	Enlightenment edje headers and development libraries
 Group:		Development/Other
-Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
 Requires:	pkgconfig(lua)
-Provides:	%{name}-devel = %{version}-%{release}
+Provides:	%{name}-devel = %{EVRD}
 
 %description -n %{devname}
 Edje development headers and libraries.
@@ -70,7 +69,7 @@ Edje development headers and libraries.
 %{_libdir}/lib%{name}.so.%{major}*
 
 %files -n %{devname}
-%{_libdir}/lib*.so
+%{_libdir}/lib%{name}.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/%{name}*
 
