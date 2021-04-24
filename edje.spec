@@ -47,22 +47,25 @@ Provides:	%{name}-devel = %{EVRD}
 Edje development headers and libraries.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure2_5x \
+%configure \
 	--disable-static
-%make
+
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc AUTHORS COPYING README
+%dir %{_libdir}/%{name}
+%dir %{_datadir}/%{name}
 %{_bindir}/%{name}_*
 %{_bindir}/inkscape2edc
-%{_libdir}/edje/utils/epp
-%{_datadir}/%{name}
+%{_libdir}/%{name}/*
+%{_datadir}/%{name}/*
 %{_datadir}/mime/packages/%{name}.xml
 
 %files -n %{libname}
@@ -72,4 +75,3 @@ Edje development headers and libraries.
 %{_libdir}/lib%{name}.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/%{name}*
-
